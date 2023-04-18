@@ -1,12 +1,11 @@
-Csound Build Instructions
-=========================
+# Csound Build Instructions
 
 Build instructions for building Csound from the source packages for the
 following operating systems
 
 -   [Debian/Ubuntu Linux](#debian)
 
--   [Mac OS X using Homebrew](#OSXHomebrew)
+-   [Mac OS X using Homebrew](#macOSHomebrew)
 
 -   [General Instructions for Linux without Root access](#generalLinux)
 
@@ -27,8 +26,7 @@ for amendments and updates
 
 
 
-Debian/Ubuntu <a name="debian">
---------------
+## Debian/Ubuntu
 
 The following instructions will explain how to configure, compile, and install
 Csound 6 on Debian and Ubuntu systems.
@@ -83,16 +81,15 @@ set of folders.
 
 
 
-macOS using Homebrew <a name="OSXHomebrew">
------------------------
+## macOS using Homebrew
 
-### Introduction 
+### Introduction
 
 Homebrew is a package manager for macOS. It is able to download, build, and
 install applications, including their dependencies. The following sections will
 describe what you will need to do to use Homebrew to install Csound 6.
 
-### Requirements 
+### Requirements
 
 -   Xcode
 
@@ -102,7 +99,7 @@ describe what you will need to do to use Homebrew to install Csound 6.
 
 [2]: <https://brew.sh>
 
-#### Installing Homebrew 
+#### Installing Homebrew
 
 You will first need to have a working Homebrew setup. This
 requires installing Xcode and the Xcode Command-Line tools. More information on
@@ -124,7 +121,7 @@ add_subdirectory,add_file,delete_child,directory_inherit'
 
 where YOUR_NAME_HERE refers to your system username.
 
-### Installing Csound 
+### Installing Csound
 
 Once Homebrew is setup, run the following command at the commandline to install Csound:
 
@@ -182,10 +179,7 @@ For step 4, you can use `cmake .. -G Xcode` if you then want to build Csound wit
 
 
 
-
-
-General Linux without Root access <a name="generalLinux">
----------------------------------
+## General Linux without Root access
 
 These are generic instructions to build on any Linux system with no root access.
 These instructions require a full development system (compilers, flex, bison,
@@ -235,7 +229,7 @@ doing it.
 
 -   `make install `
 
-### 3) get Csound (latest from git) 
+### 3) get Csound (latest from git)
 
 The latest Csound sources are kept in the develop branch. For the latest
 released sources, you do not need to change branches.
@@ -250,7 +244,7 @@ released sources, you do not need to change branches.
 
 -   `mv Custom.cmake.ex Custom.cmake `
 
-### 4) set the include path for the build 
+### 4) set the include path for the build
 
 Cmake needs to find your locally-installed headers in HOME/bin. You can add
 custom commands to Cmake by using a Custom.cmake file, which Cmake will read if
@@ -259,7 +253,7 @@ it exists.
 Open or create the Custom.cmake file in the top level Csound sources directory
 and add the following line: `include_directories("ENV{HOME}/include") `
 
-### 5) build and install Csound 
+### 5) build and install Csound
 
 The recommended method is to create a separate build directory and run cmake
 there.
@@ -272,7 +266,7 @@ there.
 
 -   `make install `
 
-### Notes 
+### Notes
 
 This builds a basic system. If you add dependencies to your HOME directories,
 then you can run make again to build them. The csound command-line frontend will
@@ -323,8 +317,8 @@ Python headers / library - http://www.python.org
 swig - http://www.swig.org/ Java SDK - http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 
-Raspberry Pi Standard Distro <a name="raspian">
------------------------------
+
+## Raspberry Pi Standard Distro
 
 ### (Raspian Wheezy)
 
@@ -414,8 +408,9 @@ rpi 2 and 3, though.**
 
 3. Remember to run cmake again (step 6 above) after any changes to Custom.cmake
 
-Fedora 18 <a name="fedora">
----------
+
+
+## Fedora 18
 
 ### Introduction 
 
@@ -566,13 +561,13 @@ and log out of root
 Testing As a basic test, just try typing csound at a command prompt, and you
 should get the help message.
 
-Windows 32/64 Bit (msys2) <a name="msys2">
----------------
+## Windows 32/64 Bit (msys2)
+
 Csound for Windows can now be built using MSYS2. This is the recommeneded way to build Csound for Windows. Please follow the instruction posted [here](https://github.com/csound/csound/tree/develop/mingw64).
 
 
-Windows 32 Bit (mingw32) <a name="mingw32">
----------------
+## Windows 32 Bit (mingw32)
+
 A basic working knowledge of the Windows command prompt is assumed. Further instructions for Windows can be found in their own document at the following link [Csound Windows Build Doc][1]
 
 [1]: <https://github.com/csound/csound/blob/develop/How_to_Build_Csound_on_Windows.doc>
@@ -637,12 +632,11 @@ Run cmake from the csound dir and configure Csound to build using MinGW Makefile
 Run generate.
 cd to csound build directory and run mingw32-make
 
-Windows Visual Studio <a name="msvs">
---------------
+## Windows Visual Studio
+
 Instructions can be found [here](https://github.com/csound/csound/blob/develop/platform/windows/README.md).
 
-Android <a name="android">
--------------- 
+## Android
 
 Requirements
 
